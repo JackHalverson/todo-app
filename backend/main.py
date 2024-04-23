@@ -16,7 +16,7 @@ app = FastAPI()
 # Set up CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # The origin of the frontend app
+    allow_origins=["*"],  # The origin of the frontend app
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -34,6 +34,7 @@ def get_db():
 async def get_todos(db: Session = Depends(get_db)) -> list[schemas.Todo]:
     return crud.get_todos(db)
 
-@app.post("/", response_model=list[schemas.Todo])
+@app.post("/", response_model=schemas.Todo)
 async def create_todos(todo: schemas.TodoCreate, db: Session = Depends(get_db)):
-    return crud.create_todo(db=db, todo=todo)
+    created_todo = crud.create_todo(db=db, todo=todo)
+    return created_todo
