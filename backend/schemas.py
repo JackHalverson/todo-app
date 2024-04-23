@@ -12,3 +12,6 @@ class Todo(TodoBase):
 
     class Config:
         from_atributes = True
+
+class TodoDeleteResponse(BaseModel):
+    message: str

@@ -1,4 +1,4 @@
-from fastapi import Depends, FastAPI
+from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -38,3 +38,11 @@ async def get_todos(db: Session = Depends(get_db)) -> list[schemas.Todo]:
 async def create_todos(todo: schemas.TodoCreate, db: Session = Depends(get_db)):
     created_todo = crud.create_todo(db=db, todo=todo)
     return created_todo
+
+@app.delete("/{todo_id}")
+async def delete_todo(todo_id: int, db: Session = Depends(get_db)):
+    todo = crud.get_todo_by_id(db=db, todo_id=todo_id)
+    if todo is None:
+        raise HTTPException(status_code=404, detail="Todo not found")
+    crud.delete_todo(db=db, todo=todo)
+    return {"message": "Todo deleted successfully"}
