@@ -1,0 +1,88 @@
+.translucent-background {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.todo-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.todo-container h1 {
+  text-align: center;
+}
+
+.todo-list {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 2px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.todo-item {
+  display: flex;
+  margin-bottom: 10px;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 2px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  padding: 10px;
+}
+
+.todo-number{
+  color: rgb(255, 111, 0);
+}
+
+.add-todo {
+  display: flex;
+  flex-direction: column;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 2px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.add-todo input {
+  margin: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 2px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.add-todo-button {
+  color: rgb(255, 111, 0);
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 2px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.add-todo-button:hover {
+  background: rgba( 255, 255, 255, 0.70 );
+}
+
+/* Media Query for Responsive Design */
+@media screen and (max-width: 600px) {
+  .todo-container {
+    padding: 10px;
+  }
+}
